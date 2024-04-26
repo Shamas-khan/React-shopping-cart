@@ -1,10 +1,11 @@
-import { useState, useEffect,useCallback,memo } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 
- export const useApi =(url) => {
+export const useApi = (url) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
-console.log("useapi hook");
+  console.log("useapi hook");
+
   const fetchData = useCallback(async () => {
     try {
       const response = await fetch(url);
@@ -16,14 +17,12 @@ console.log("useapi hook");
     } finally {
       setLoading(false);
     }
-  },[url]);
+  }, [url]);
+  
   useEffect(() => {
     setError(false);
     fetchData();
-  }, [url,fetchData ]);
+  }, [url, fetchData]);
 
-  return [loading, data, error]  ;
+  return { loading, data, error };
 };
-
-  
-   

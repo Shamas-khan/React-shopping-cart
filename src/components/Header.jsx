@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 function Header() {
   console.log("herder");
@@ -65,4 +64,4 @@ function Header() {
     </>
   );
 }
-export default memo(Header);
+export default Header ;

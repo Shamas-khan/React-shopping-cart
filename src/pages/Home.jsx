@@ -1,23 +1,20 @@
 import { useApi } from "../hook/useApi";
+import {Spinner} from '../components/Spinner'
 
 const Home = () => {
-  const [loading, data, error] = useApi("https://dummyjson.com/products");
+  const {loading, data, error} = useApi("https://dummyjson.com/products");
   console.log("home");
   const { products } = data;
-  console.log(products);
+  console.log('dsda',products);
   return (
     <>
       <div className="container mx-auto ">
         <div className="flex flex-wrap  ">    
-          {/* {loading && ( */}
-          <div class="flex justify-center items-center h-screen mx-auto">
-            <div class="animate-spin  rounded-full h-32 w-32 border-b-2 border-slate-300"></div>
-          </div>
-          {/* )} */}
-          {/* {products?.map((product) => (
+           {loading && <Spinner/>} 
+          {products?.map((product) => (
             <div
               key={product.id}
-              className="card w-[23%] bg-slate-800 shadow-xl mx-2 my-4"
+              className="card sm:w-[45%] md:w-[30%] lg:w-[23%] bg-base-100  shadow-xl mx-2 my-4"
             >
               <figure className="px-10 pt-10">
                 <img
@@ -34,7 +31,8 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          ))} */}
+          ))}
+          {error && <div>Error: {error.message}</div>}
         </div>
       </div>
     </>
