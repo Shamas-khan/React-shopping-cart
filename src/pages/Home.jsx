@@ -8,8 +8,13 @@ const Home = () => {
   return (
     <>
       <div className="container mx-auto ">
-        <div className="flex flex-wrap  ">
-          {products?.map((product) => (
+        <div className="flex flex-wrap  ">    
+          {/* {loading && ( */}
+          <div class="flex justify-center items-center h-screen mx-auto">
+            <div class="animate-spin  rounded-full h-32 w-32 border-b-2 border-slate-300"></div>
+          </div>
+          {/* )} */}
+          {/* {products?.map((product) => (
             <div
               key={product.id}
               className="card w-[23%] bg-slate-800 shadow-xl mx-2 my-4"
@@ -29,7 +34,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </>

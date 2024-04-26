@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+@layer utilities {
+    .border-gray-900 {
+      --tw-border-opacity: 1;
+      border-color: rgba(203, 205, 213, var(--tw-border-opacity));
+    }
+  } */
