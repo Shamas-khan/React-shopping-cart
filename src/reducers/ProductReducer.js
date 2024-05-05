@@ -38,9 +38,7 @@ const ProductReducer = (url) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
 
   useEffect(() => {
-    if(loading){
-      dispatch({type:"FETCH_INIT"})
-    }
+    
 
     if (data) {
       dispatch({ type: "FETCH_SUCCESS", payload: data });
