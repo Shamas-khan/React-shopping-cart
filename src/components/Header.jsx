@@ -1,8 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
+import React from 'react'
+
 function Header() {
   console.log("herder");
 
   let navigate = useNavigate();
+  
   const handleClick = (e) => {
     e.preventDefault();
     navigate("/cart");
@@ -10,6 +13,7 @@ function Header() {
 
   return (
     <>
+    <div className="container mx-auto ">
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <Link to={"/"} className="btn btn-ghost text-xl">
@@ -61,7 +65,8 @@ function Header() {
           </div>
         </div>
       </div>
+      </div>
     </>
   );
 }
-export default Header ;
+export default React.memo(Header) ;
