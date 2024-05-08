@@ -33,7 +33,7 @@ const initialState = {
 };
 const ProductReducer = (url) => {
  
-
+  console.log('ProductReducer');
   const { data, loading, error } = useApi(url);
   const [state, dispatch] = useReducer(dataReducer, initialState);
 
@@ -48,7 +48,7 @@ const ProductReducer = (url) => {
     }
   }, [data, error]);
 
-  return { state };
+  return { state , loading};
 };
 
 export default ProductReducer;

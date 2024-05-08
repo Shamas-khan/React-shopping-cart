@@ -3,9 +3,9 @@ import {Spinner} from '../components/Spinner'
 import ProductReducer from "../reducers/ProductReducer";
 
 const Home = () => {
-  const { state } = ProductReducer("https://dummyjson.com/products");
+  const { state, loading } = ProductReducer("https://dummyjson.com/products");
 
-  const { data, loading, error } = state;
+  const { data, error } = state;
   console.log("home");
   
   console.log('dsda',data);
@@ -21,14 +21,14 @@ const Home = () => {
             >
               <figure className="px-10 pt-10">
                 <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                  src={product.images[0]}
                   alt="Shoes"
                   className="rounded-xl"
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">{product.brand}</h2>
+                <p>{product.description}</p>
                 <div className="card-actions">
                   <button className="btn btn-primary">ADD TO CART</button>
                 </div>
@@ -43,3 +43,7 @@ const Home = () => {
 };
 
 export default Home;
+
+// if (loading || !data.products) {
+//   return <Spinner />;
+// }
