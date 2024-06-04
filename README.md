@@ -29,7 +29,7 @@
   <h2>Installation</h2>
   <ol>
     <li>Clone the repository:</li>
-    <pre><code>git clone https://github.com/your-username/shopping-cart.git</code></pre>
+    <pre><code>https://github.com/Shamas-khan/React-shopping-cart.git</code></pre>
     <li>Navigate to the project directory:</li>
     <pre><code>cd shopping-cart</code></pre>
     <li>Install the dependencies:</li>
@@ -40,7 +40,7 @@
   <ol>
     <li>Start the development server:</li>
     <pre><code>npm start</code></pre>
-    <li>Open your browser and go to <code>http://localhost:3000</code> to view the application.</li>
+    <li>Open your browser and go to <code>http://localhost:5173/</code> to view the application.</li>
   </ol>
 
   <h2>License</h2>
