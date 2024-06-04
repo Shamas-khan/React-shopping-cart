@@ -2,11 +2,12 @@ import { useApi } from "../hook/useApi";
 import { Spinner } from "../components/Spinner";
 import { useApiData } from "../context/ApiContexts";
 import { useCartData } from "../context/CartContext";
+import { useEffect } from "react";
 
 const Home = () => {
   const { data, loading, error, fetchData } = useApiData();
   const { state, dispatch } = useCartData();
-
+ 
   console.log("shamsa", state);
   const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
@@ -60,7 +61,9 @@ const Home = () => {
               </div>
             ))}
           {error && <div>Error: {error.message}</div>}
+         
         </div>
+        
       </div>
     </>
   );

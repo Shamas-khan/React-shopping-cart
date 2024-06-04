@@ -57,8 +57,8 @@ console.log(state);
             ))
           )}
         </div>
-        <div class="card w-96 bg-base-100 shadow-xl self-end">
-        <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl self-end">
+        <div className="card-body">
           <h2 className="card-title">Cart Detail</h2>
           <p>Product: <span>{state.items.length}</span></p>
           <p>Total Price: <span>${state.total}</span></p>
