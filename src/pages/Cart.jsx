@@ -18,7 +18,7 @@ console.log(state);
   };
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto flex flex-col">
         <div className="flex flex-wrap">
           {state.items.length === 0 ? (
             <p>No products found</p>
@@ -57,6 +57,14 @@ console.log(state);
             ))
           )}
         </div>
+        <div class="card w-96 bg-base-100 shadow-xl self-end">
+        <div class="card-body">
+          <h2 className="card-title">Cart Detail</h2>
+          <p>Product: <span>{state.items.length}</span></p>
+          <p>Total Price: <span>${state.total}</span></p>
+          
+        </div>
+      </div>
       </div>
     </>
   );
