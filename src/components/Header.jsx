@@ -73,4 +73,4 @@ console.log("header",state);
     </>
   );
 }
-export default Header  ;
+export default React.memo(Header);

@@ -5,7 +5,7 @@ import { useApi } from '../hook/useApi';
 const ApiContexts = createContext();
 
 export const ApiProvider = ({ children }) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

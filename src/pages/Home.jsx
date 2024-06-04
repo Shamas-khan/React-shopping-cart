@@ -1,20 +1,19 @@
 import { useApi } from "../hook/useApi";
 import { Spinner } from "../components/Spinner";
 import { useApiData } from "../context/ApiContexts";
-import {useCartData} from "../context/CartContext"
-
+import { useCartData } from "../context/CartContext";
 
 const Home = () => {
-  const { data, loading, error } = useApiData();
+  const { data, loading, error, fetchData } = useApiData();
   const { state, dispatch } = useCartData();
 
+  console.log("shamsa", state);
   const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
   const removeToCart = (product) => {
     dispatch({ type: "REMOVE_ITEM", payload: product });
   };
-
 
   return (
     <>
@@ -28,7 +27,7 @@ const Home = () => {
                 key={product.id}
                 className="card  sm:w-[45%] md:w-[30%] lg:w-[23%] xl:w[15%] bg-base-100  shadow-xl mx-2 my-4"
               >
-                <figure className="px-10 pt-10">
+                <figure className="px-10 pt-10 h-[180px]">
                   <img
                     src={product.images[0]}
                     alt="Shoes"
@@ -39,7 +38,9 @@ const Home = () => {
                   <h2 className="card-title">{product.brand}</h2>
                   <p>{product.description}</p>
                   <div className="card-actions">
-                    {state.items.some((item) => item.id === product.id) ? (
+                    {state.items.some(
+                      (item) => item.product.id === product.id
+                    ) ? (
                       <button
                         className="btn btn-primary"
                         onClick={() => removeToCart(product)}
@@ -66,5 +67,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
